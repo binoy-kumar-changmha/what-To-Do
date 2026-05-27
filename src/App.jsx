@@ -9,9 +9,15 @@ function App() {
 
   const [elements, setElements] = useState([])
 
-  function addToDo(event) {
-    setElements([...elements, { task: event.task, date: event.date }])
+  // function addToDo(event) {
+  //   setElements([...elements, { task: event.task, date: event.date }])
+  // }
+
+  function addToDo(task, date) {
+    setElements(currentValue =>
+      [...currentValue, { task, date }])
   }
+
   function handleDelete(event) {
     const newElements = elements.filter(
       element =>

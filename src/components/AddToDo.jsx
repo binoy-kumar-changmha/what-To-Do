@@ -9,7 +9,7 @@ const AddToDo = ({handleAdd}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    handleAdd({ task: taskRef.current.value, date: dateRef.current.value })
+    handleAdd(taskRef.current.value, dateRef.current.value )
     taskRef.current.value = ""
     dateRef.current.value = ""
   }
