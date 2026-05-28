@@ -1,6 +1,9 @@
 import { MdDelete } from "react-icons/md";
+import { useContext } from "react"
+import {ToDoContext} from "../store/todo-context";
 
-function ToDoItem({ task, date, handleDelete }) {
+function ToDoItem({ task, date}) {
+  const { handleDelete } = useContext(ToDoContext)
 
   return <div className="container">
 

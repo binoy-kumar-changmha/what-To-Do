@@ -1,15 +1,25 @@
 import styles from "./AddToDo.module.css"
 import { useRef } from "react"
 import { IoMdAdd } from "react-icons/io";
+import { useContext } from "react"
+import { ToDoContext } from "../store/todo-context";
 
-const AddToDo = ({handleAdd}) => {
+
+const AddToDo = () => {
   
+  const { addToDo } = useContext(ToDoContext)
+
   const taskRef = useRef("")
   const dateRef = useRef("")
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    handleAdd(taskRef.current.value, dateRef.current.value )
+    addToDo(taskRef.current.value, dateRef.current.value)
+    // dispatchItems({
+    //   type: "ADD",
+    //   payload: { // return as object
+    //     task: taskRef.current.value,
+    //     date: dateRef.current.value }})
     taskRef.current.value = ""
     dateRef.current.value = ""
   }
